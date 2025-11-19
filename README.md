@@ -50,19 +50,19 @@ history, and staff records with a clean, navigable sidebar interface.
 ## 🔹 Screenshots & Demo
 
 **Login Page**
-![Login Screenshot](images/login_page.png)
+![Login Screenshot](Main.png)
 
 **Dashboard / Stock Management**
-![Dashboard Screenshot](images/oms_dashboard.png)
+![Dashboard Screenshot](Dashboard.png)
 
-**Stock In / Stock Out**
-![Stock Management Screenshot](images/stock_in_out.png)
+**Report Generator**
+![Report Screenshot](report_generator.png)
 
 **Staff Records**
-![Staff Screenshot](images/staff_page.png)
+![Staff Screenshot](staff.png)
 
-**Optional Demo GIF**
-![Demo GIF](images/demo.gif)
+**History Records**
+![History Screenshot](history.png)
 
 
 ## Setup & Run Instructions
