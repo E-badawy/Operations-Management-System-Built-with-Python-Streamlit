@@ -43,17 +43,31 @@ history, and staff records with a clean, navigable sidebar interface.
 - Streamlit >= 1.22
 - psycopg2 / mysql-connector-python (depending on DB)
 - pandas
+- VSCode or any code editor
+
 - Optional: Git for cloning
 
-## Screenshots
-![Login Page](images/login_page.png)
-![Dashboard](images/oms_dashboard.png)
-![Login Page](images/login_page.png)
-![Dashboard](images/oms_dashboard.png)
+## 🔹 Screenshots & Demo
+
+**Login Page**
+![Login Screenshot](images/login_page.png)
+
+**Dashboard / Stock Management**
+![Dashboard Screenshot](images/oms_dashboard.png)
+
+**Stock In / Stock Out**
+![Stock Management Screenshot](images/stock_in_out.png)
+
+**Staff Records**
+![Staff Screenshot](images/staff_page.png)
+
+**Optional Demo GIF**
+![Demo GIF](images/demo.gif)
+
 
 ## Setup & Run Instructions
 
-1. **Clone the repository**
+**Clone the repository and set up virtual environemnt**
 ```bash
 git clone https://github.com/e-badawy/superstore_offline.git
 python -m venv .venv
@@ -65,16 +79,48 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+**Set up MySQL database**
 
-*Set up the database*
+* Install MySQL locally if not already
+* Create a new database, e.g., `oms_db`
+* Run `db_setup.sql` in MySQL Workbench or VSCode SQL extension to create tables
 
-Create a PostgreSQL/MySQL database
+**Update database connection**
 
-Run db_setup.sql (if exists) to create tables
+* Open `db.py`
+* Update the connection details:
 
-Update db.py with your connection credentials
+```python
+host='localhost'
+user='root'
+password='your_password'
+database='oms_db'
+```
 
-🔹 *Project Structure*
+**Create initial users**
+
+* Open MySQL console or VSCode SQL editor and insert users:
+
+```sql
+INSERT INTO users (username, password, role) VALUES ('admin', '123', 'Admin');
+INSERT INTO users (username, password, role) VALUES ('store', '123', 'Store');
+INSERT INTO users (username, password, role) VALUES ('account', '123', 'Account');
+```
+
+**Run the Streamlit app**
+
+```bash
+streamlit run app.py
+```
+
+**Access the app**
+
+* Open a browser at `http://localhost:8501`
+* Login with credentials created above
+
+---
+
+🔹 **Project Structure**
 ```
 superstore_offline/
 │
@@ -85,3 +131,13 @@ superstore_offline/
 ├─ images/                # Screenshots and GIFs
 └─ other_modules/         # Optional helper scripts
 ```
+---
+
+## 🔹 Links
+
+* [GitHub Repository](https://github.com/e-badawy/superstore_offline)
+
+---
+
+*Complete workflow including setup for MySQL, running in VSCode, creating users, and app workflow.*
+
